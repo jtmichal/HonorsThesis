@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class ShellHouse : MonoBehaviour
 {
-    public Overlay menu;
-
     Rigidbody2D rigidbody2D;
     SpriteRenderer spriteRenderer;
+    public bool isVisible = false;
+    public GameObject test;
     
     void Awake()
     {
+        test = GameObject.Find("Popup");
+        test.SetActive(false);
         rigidbody2D = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        menu.Awake();
     }
 
      void OnMouseEnter()
@@ -26,8 +27,10 @@ public class ShellHouse : MonoBehaviour
      }
 
      void OnMouseDown(){
-        menu.OnMouseDown();
+        test.SetActive(true);
      }
+
+
     
     // Update is called once per frame
     void Update()
