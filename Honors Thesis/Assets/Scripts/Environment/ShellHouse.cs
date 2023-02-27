@@ -7,12 +7,12 @@ public class ShellHouse : MonoBehaviour
     Rigidbody2D rigidbody2D;
     SpriteRenderer spriteRenderer;
     public bool isVisible = false;
-    public GameObject test;
+    public GameObject Popup;
     
     void Awake()
     {
-        test = GameObject.Find("Popup");
-        test.SetActive(false);
+        //popup = GameObject.Find("Popup");
+        //test.SetActive(false);
         rigidbody2D = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
@@ -27,7 +27,7 @@ public class ShellHouse : MonoBehaviour
      }
 
      void OnMouseDown(){
-        test.SetActive(true);
+        Popup.SetActive(true);
      }
 
 
