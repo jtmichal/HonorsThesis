@@ -44,6 +44,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Platforms
+    uniqueID: 698932343
+    locked: 0
+  - name: Objects
+    uniqueID: 182886747
+    locked: 0
   - name: Overlay
     uniqueID: 3108875095
     locked: 0
