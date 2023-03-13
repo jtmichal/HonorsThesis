@@ -7,10 +7,12 @@ public class collide : MonoBehaviour
 
     public Animator animator;
     public bool toTrigger = true;
+    public GameObject Exit;
+    public GameObject Chest;
 
     void Start()
     {
-        animator = GetComponent<Animator>();
+        animator = Chest.GetComponent<Animator>();
     }
 
     void Update()
@@ -25,6 +27,8 @@ public class collide : MonoBehaviour
         if (collider.gameObject.tag == "Player" && toTrigger == true && PlayerMove.hasKey == true)
         {
             animator.enabled = !animator.enabled;
+            Exit.SetActive(true);
+
             toTrigger = false;
             
         }

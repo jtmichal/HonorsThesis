@@ -69,11 +69,11 @@ public class PlayerMove : MonoBehaviour
     private void FixedUpdate()
     {
         player.velocity = new Vector2(moveInput * speed, player.velocity.y);
-        if (isFacingRight == false && moveInput > 0)
+        if (isFacingRight == true && moveInput > 0)
         {
             FlipPlayer();
         }
-        else if (isFacingRight == true && moveInput < 0)
+        else if (isFacingRight == false && moveInput < 0)
         {
             FlipPlayer();
         }
