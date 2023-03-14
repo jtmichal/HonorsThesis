@@ -11,6 +11,7 @@ public class PlayerMove : MonoBehaviour
     float timer = 0.0f;
     public bool idle = false;
     public static bool hasKey = false;
+    public static bool hasChest = false;
     public GameObject Key;
     private Rigidbody2D player;
 
@@ -19,6 +20,10 @@ public class PlayerMove : MonoBehaviour
     public float jumpForce;
     public float downForce;
     public float moveInput;
+    private string varName;
+    private string varTag;
+
+    public GameObject GameOver;
 
 
     // Start is called before the first frame update
@@ -96,20 +101,28 @@ public class PlayerMove : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        name = collision.gameObject.name;
-        if (name == "Key")
+        varName = collision.gameObject.name;
+        varTag = collision.gameObject.tag;
+        if (varName == "Key")
         {
             Debug.Log("YERRRRRR");
             hasKey = true;
             Key.SetActive(false);
         }
-        else if (name == "Key")
+        else if (varName == "Key")
         {
             Debug.Log("Something something");
         }
-        
-        //transform.position = origin;
-        //Debug.Log("TRIGGER!");
-        // This was here to test when the character model bumps into stuff
+        else if (varName == "Krabby")
+        {
+            Debug.Log("YOU DIEDDDD");
+            hasKey = false;
+            GameOver.SetActive(true);
+
+
+            //transform.position = origin;
+            //Debug.Log("TRIGGER!");
+            // This was here to test when the character model bumps into stuff
+        }
     }
 }

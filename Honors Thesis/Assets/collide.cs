@@ -12,7 +12,7 @@ public class collide : MonoBehaviour
 
     void Start()
     {
-        animator = Chest.GetComponent<Animator>();
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -23,10 +23,13 @@ public class collide : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collider)
     {
         Debug.Log("In Trigger");
-        Debug.Log("hasKey value is..." + PlayerMove.hasKey);
-        if (collider.gameObject.tag == "Player" && toTrigger == true && PlayerMove.hasKey == true)
+        Debug.Log(collider.tag);
+        Debug.Log(collider.gameObject.name);
+        if (collider.tag == "Player" && toTrigger == true && PlayerMove.hasKey == true)
         {
-            animator.enabled = !animator.enabled;
+            Debug.Log("SUCCESS");
+            PlayerMove.hasChest = true;
+            animator.enabled = true;
             Exit.SetActive(true);
 
             toTrigger = false;

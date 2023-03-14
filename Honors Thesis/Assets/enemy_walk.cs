@@ -25,7 +25,7 @@ public class enemy_walk : MonoBehaviour
         tag = collision.gameObject.tag;
         if (tag == "Wall")
         {
-            Debug.Log("wall");
+            //Debug.Log("wall");
             dirX *= -1f;
         }
     }

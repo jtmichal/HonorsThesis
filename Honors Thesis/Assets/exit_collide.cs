@@ -7,6 +7,7 @@ public class exit_collide : MonoBehaviour
 
     //public Animator animator;
     public bool toTrigger = true;
+    public GameObject GameWon;
 
 
     void Start()
@@ -23,11 +24,12 @@ public class exit_collide : MonoBehaviour
     {
         Debug.Log("In Trigger");
         Debug.Log("hasKey value is..." + PlayerMove.hasKey);
-        if (collider.gameObject.tag == "Player" && toTrigger == true && PlayerMove.hasKey == true)
+        if (collider.gameObject.tag == "Player" && toTrigger == true && PlayerMove.hasChest == true)
         {
             
             toTrigger = false;
-            Debug.Log("omg you did it");
+            PlayerMove.hasKey = false;
+            GameWon.SetActive(true);
 
         }
     }
