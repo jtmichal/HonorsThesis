@@ -9,6 +9,7 @@ public class collide : MonoBehaviour
     public bool toTrigger = true;
     public GameObject Exit;
     public GameObject Chest;
+    public Help help;
 
     void Start()
     {
@@ -31,6 +32,7 @@ public class collide : MonoBehaviour
             PlayerMove.hasChest = true;
             animator.enabled = true;
             Exit.SetActive(true);
+            help.help2.SetActive(false);
 
             toTrigger = false;
             

@@ -8,6 +8,7 @@ public class exit_collide : MonoBehaviour
     //public Animator animator;
     public bool toTrigger = true;
     public GameObject GameWon;
+    public Help help;
 
 
     void Start()
@@ -30,6 +31,7 @@ public class exit_collide : MonoBehaviour
             toTrigger = false;
             PlayerMove.hasKey = false;
             GameWon.SetActive(true);
+            help.help3.SetActive(false);
 
         }
     }

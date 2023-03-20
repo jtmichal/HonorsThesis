@@ -14,6 +14,7 @@ public class PlayerMove : MonoBehaviour
     public static bool hasChest = false;
     public GameObject Key;
     private Rigidbody2D player;
+    public Help help;
 
     private bool isFacingRight = true;
     private bool isJumping = false;
@@ -108,6 +109,7 @@ public class PlayerMove : MonoBehaviour
             Debug.Log("YERRRRRR");
             hasKey = true;
             Key.SetActive(false);
+            help.help1.SetActive(false);
         }
         else if (varName == "Key")
         {
