@@ -30,8 +30,11 @@ public class exit_collide : MonoBehaviour
             
             toTrigger = false;
             PlayerMove.hasKey = false;
+            PlayerMove.hasChest = false;
             GameWon.SetActive(true);
             help.help3.SetActive(false);
+            help.off = true;
+            
 
         }
     }
